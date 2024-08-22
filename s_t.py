@@ -80,9 +80,9 @@ if result:
     elif in_lang == "Español":
         input_language = "es"
     elif in_lang == "Alemán":
-        input_language = "ge"
-    elif in_lang == "Coreano":
-        input_language = "ko"
+        input_language = "de"
+    elif in_lang == "Italiano":
+        input_language = "ita"
     elif in_lang == "Mandarín":
         input_language = "zh-cn"
     elif in_lang == "Japonés":
@@ -96,10 +96,10 @@ if result:
         output_language = "en"
     elif out_lang == "Español":
         output_language = "es"
-    elif out_lang == "Bengali":
-        output_language = "bn"
-    elif out_lang == "Coreano":
-        output_language = "ko"
+    elif out_lang == "Alemán":
+        output_language = "de"
+    elif out_lang == "Italiano":
+        output_language = "it-ita"
     elif out_lang == "Mandarín":
         output_language = "zh-cn"
     elif out_lang == "Japonés":
