@@ -83,8 +83,8 @@ if result:
         input_language = "de"
     elif in_lang == "Italiano":
         input_language = "ita"
-    elif in_lang == "Mandarín":
-        input_language = "zh-cn"
+    elif in_lang == "Francés":
+        input_language = "fr"
     elif in_lang == "Japonés":
         input_language = "ja"
     
