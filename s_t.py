@@ -79,8 +79,8 @@ if result:
         input_language = "en"
     elif in_lang == "Español":
         input_language = "es"
-    elif in_lang == "Bengali":
-        input_language = "bn"
+    elif in_lang == "Alemán":
+        input_language = "ge"
     elif in_lang == "Coreano":
         input_language = "ko"
     elif in_lang == "Mandarín":
