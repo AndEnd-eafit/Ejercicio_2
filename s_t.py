@@ -51,24 +51,20 @@ st.markdown('<p class="paragraph-font">Toca el botón y habla lo que quieres tra
 stt_button = Button(label="Escuchar 🎤", width=300, height=50)
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
-    recognition.continuous = true;
-    recognition.interimResults = true;
- 
-    recognition.onresult = function (e) {
-        var value = "";
-        for (var i = e.resultIndex; i < e.results.length; ++i) {
-            if (e.results[i].isFinal) {
-                value += e.results[i][0].transcript;
-            }
-        }
-        if (value != "") {
-            document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: value}));
-        }
+    recognition.continuous = false;  // Cambiado a 'false' para que no se ejecute indefinidamente
+    recognition.interimResults = false; // Solo los resultados finales
+    recognition.lang = 'es-ES';  // Puedes ajustar el idioma aquí
+    recognition.onresult = function(event) {
+        var transcript = event.results[0][0].transcript;
+        document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: transcript}));
+    }
+    recognition.onerror = function(event) {
+        console.error("Error en el reconocimiento de voz: " + event.error);
     }
     recognition.start();
     """))
 
-# Streamlit Bokeh events for handling speech-to-text
+# Streamlit Bokeh events para manejar speech-to-text
 result = streamlit_bokeh_events(
     stt_button,
     events="GET_TEXT",
@@ -78,9 +74,8 @@ result = streamlit_bokeh_events(
     debounce_time=0
 )
 
-if result:
-    if "GET_TEXT" in result:
-        st.write(result.get("GET_TEXT"))
+if result and "GET_TEXT" in result:
+    st.write("Texto detectado: ", result.get("GET_TEXT"))
 
     # Create temp folder if not exists
     if not os.path.exists("temp"):
