@@ -40,7 +40,7 @@ st.markdown('<p class="title-font">TRADUCTOR.</p>', unsafe_allow_html=True)
 st.markdown('<p class="paragraph-font">Escucho lo que quieres traducir.</p>', unsafe_allow_html=True)
 
 # Imagen centrada
-image = Image.open('OIG7.jpg')
+image = Image.open('Traductor - Yoru.png')
 st.image(image, width=300, use_column_width='auto', caption="Imagen del Traductor")
 
 # Sidebar y botón de instrucciones
