@@ -36,7 +36,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Título y subtítulo con las nuevas tipografías
-st.markdown('<p class="title-font">TRADUCTOR.</p>', unsafe_allow_html=True)
+st.markdown('<p class="title-font">TRADUCTOR</p>', unsafe_allow_html=True)
 st.markdown('<p class="paragraph-font">Escucho lo que quieres traducir.</p>', unsafe_allow_html=True)
 
 # Imagen centrada
