@@ -45,7 +45,7 @@ st.image(image, width=300, use_column_width='auto', caption="Imagen del Traducto
 
 # Sidebar y botón de instrucciones
 with st.sidebar:
-    st.subheader("Traductor.")
+    st.subheader("Traductor")
     st.write("Presiona el botón, cuando escuches la señal "
              "habla lo que quieres traducir, luego selecciona"
              " la configuración de lenguaje que necesites.")
